@@ -17,13 +17,11 @@ public class Main {
                 4 - Sair
                 """;
 
-        System.out.println(m);
         Scanner leitor = new Scanner(System.in);
-        opcao = leitor.nextInt();
 
-
-        while (opcao !=4)
+        while (opcao !=4) {
             System.out.println(m);
+            opcao = leitor.nextInt();
             if (opcao == 1) {
                 System.out.println("O seu saldo é de de: R$ " + saldoInicial);
         } else if (opcao == 2) {
@@ -34,14 +32,21 @@ public class Main {
             } else if (opcao == 3) {
                 System.out.println("Qual valor deseja transferir: R$ ");
                 transferir = leitor.nextDouble();
-                saldoInicial -= transferir;
-                System.out.println("Saldo atualizado R$ " + saldoInicial);
                 if (transferir > saldoInicial) {
                     System.out.println("Você não possui saldo suficiente!");
+                } else {
+                    saldoInicial -= transferir;
+                    System.out.println("Saldo atualizado R$ " + saldoInicial);
                 }
-
+            } else if (opcao == 4) {
+                System.out.println("Obrigado!");
+            } else {
+                System.out.println("Opção inválida!");
 
             }
+
+
+        }
 
 
     }
